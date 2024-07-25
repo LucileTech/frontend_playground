@@ -1,0 +1,8 @@
+.grid-gifs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-item {
+  border: 1px solid black;
+}
