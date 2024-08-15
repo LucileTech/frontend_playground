@@ -1,6 +1,7 @@
-Debouncing // wait for the user to type a few keywords before the gifs appear
-Throttling // minimize/regulate api calls
-Pass by value and pass by reference
+x Debouncing // wait for the user to type a few keywords before the gifs appear
+x Throttling // minimize/regulate api calls
+x Pass by value // used pass by vaue for sanitizing keyword in API call --
+and pass by reference
 Function composition
 Closures
 High order functions
@@ -45,4 +46,3 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 # searchautocomplete
-# frontend_playground
