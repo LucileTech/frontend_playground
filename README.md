@@ -1,3 +1,26 @@
+Debouncing // wait for the user to type a few keywords before the gifs appear
+Throttling // minimize/regulate api calls
+Pass by value and pass by reference
+Function composition
+Closures
+High order functions
+Prototype chain
+Slice vs splice
+High order function
+Currying
+Pure function
+Memoization
+Hoisting
+Service worker
+Promise
+Callback hell
+Race method in promise
+Event bubbling
+Same origin policy
+Prevent default
+Event delegation
+Tree shaking
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -22,3 +45,4 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 # searchautocomplete
+# frontend_playground
