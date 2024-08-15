@@ -2,7 +2,6 @@ import React from 'react'
 import './Pagination.css'
 
 export default function Paginations({count, pagination, handleDecrease, handleIncrease}) {
-    
   return (
     <div className="pagination">
         {/* No 'previous' button at the beginning */}

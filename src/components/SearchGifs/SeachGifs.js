@@ -2,6 +2,8 @@ import React, {useState, useEffect, useRef} from 'react'
 import Gifs from '../Gifs/Gifs'
 import Paginations from '../Pagination/Paginations'
 import './SearchGifs.css'
+import {throttle} from '../../helpers/throttle'
+import {sanitizeInput} from '../../helpers/sanitizeKeyWords'
 
 function GifSearch () {
     const [keywords, setKeywords] = useState('')
@@ -35,7 +37,9 @@ function GifSearch () {
     useEffect(() => {
       const handleApicall = async () => {
           const apiKey = process.env.REACT_APP_API_KEY
-          const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keywords}&limit=9&offset=${count}`
+          const sanitizeKeyWord = sanitizeInput(keywords)
+          console.log("sanitizeKeyWord", sanitizeKeyWord)
+          const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${sanitizeKeyWord}&limit=9&offset=${count}`
           try {
               const response = await fetch(url)
               const data = await response.json()
@@ -46,8 +50,11 @@ function GifSearch () {
               console.log(err.message)
           }
       };
+      //throttle
+      const throttledApiCall = throttle(handleApicall, 2000); // Adjust the limit as needed
+
       if (keywords) {
-        handleApicall()
+        throttledApiCall()
       } else {
         setApiSearch([]);  
         setPagination([]); 
