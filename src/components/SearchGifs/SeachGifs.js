@@ -15,7 +15,7 @@ function GifSearch () {
 
     const handleChange = (event) => {
         setCount(0);
-        // Debounce
+        // Debounce & closure
         if (debounceTimeout.current) {
           clearTimeout(debounceTimeout.current);
         }
