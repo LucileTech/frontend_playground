@@ -7,8 +7,7 @@ Closures
 High order functions
 Prototype chain
 Slice vs splice
-High order function
-Currying
+Currying // create api url
 Pure function
 Memoization
 Hoisting

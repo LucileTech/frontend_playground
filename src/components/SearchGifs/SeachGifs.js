@@ -4,6 +4,7 @@ import Paginations from '../Pagination/Paginations'
 import './SearchGifs.css'
 import {throttle} from '../../helpers/throttle'
 import {sanitizeInput} from '../../helpers/sanitizeKeyWords'
+import createApiUrl from '../../helpers/createApiUrl'
 
 function GifSearch () {
     const [keywords, setKeywords] = useState('')
@@ -34,12 +35,23 @@ function GifSearch () {
          setCount(count + 9)
     }
 
+    // Set up the base URL, API key, and endpoint
+    const baseUrl = 'https://api.giphy.com/v1/gifs/search';
+    const apiKey = process.env.REACT_APP_API_KEY;
+
+    // Create the curried function
+    const apiUrlBuilder = createApiUrl(baseUrl)(apiKey);
+
     useEffect(() => {
       const handleApicall = async () => {
-          const apiKey = process.env.REACT_APP_API_KEY
           const sanitizeKeyWord = sanitizeInput(keywords)
-          console.log("sanitizeKeyWord", sanitizeKeyWord)
-          const url = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${sanitizeKeyWord}&limit=9&offset=${count}`
+          const params = {
+            q: sanitizeKeyWord,
+            limit: 9,
+            offset: count,
+        };
+
+        const url = apiUrlBuilder(params);
           try {
               const response = await fetch(url)
               const data = await response.json()
