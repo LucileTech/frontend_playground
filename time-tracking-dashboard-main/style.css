@@ -3,6 +3,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  background-color: hsl(226, 43%, 10%);
+  color: hsl(236, 100%, 87%);
 }
 
 .container {
@@ -13,10 +15,10 @@ body {
 }
 
 .card {
-  background-color: #f4f4f4;
   border-radius: 8px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: white;
 }
 
 .card h2 {
@@ -29,7 +31,32 @@ body {
 }
 
 .card .previous {
-  color: #888;
+  color: hsl(235, 45%, 61%);
+}
+
+/* Specific colors for each card */
+.card.work {
+  background-color: hsl(15, 100%, 70%);
+}
+
+.card.play {
+  background-color: hsl(195, 74%, 62%);
+}
+
+.card.study {
+  background-color: hsl(348, 100%, 68%);
+}
+
+.card.exercise {
+  background-color: hsl(145, 58%, 55%);
+}
+
+.card.social {
+  background-color: hsl(264, 64%, 52%);
+}
+
+.card.self-care {
+  background-color: hsl(43, 84%, 65%);
 }
 
 .attribution {
